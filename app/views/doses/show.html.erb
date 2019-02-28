@@ -1,0 +1,10 @@
+<h1> ✨ All you need to make the magic happen ✨ </h1>
+
+<%@cocktails.doses.each do |d| %>
+
+<p><%= d.description %> // <%= Ingredient.find(d.ingredient_id).name %> </p>
+<%= link_to "Loose a spice", cocktail_dose_path(@cocktail), class: "btn btn-danger" %>
+<% end %>
+
+<%= link_to "Add your magic ingredients", new_cocktail_dose_path(@cocktail), class: "btn btn-danger" %>
+

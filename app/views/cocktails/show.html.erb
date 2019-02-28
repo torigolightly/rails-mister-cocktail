@@ -1,0 +1,17 @@
+<h1> So this is getting you drunk tonight... </h1>
+
+<h2><%= @cocktail.name %></h2>
+
+<div class="dose">
+
+  <%@cocktail.doses.each do |d| %>
+  <p><%= d.description %> // <%= Ingredient.find(d.ingredient_id).name %></p>
+   <%= link_to "Loose spice", dose_path(d), class: "btn btn-danger", method: :delete %>
+  <% end %>
+
+  <%= link_to "Add your magic ingredients", new_cocktail_dose_path(@cocktail), class: "btn btn-danger" %>
+
+</div>
+
+
+<%= link_to "Back to your spellbook", cocktails_path, class: "btn btn-danger" %>
